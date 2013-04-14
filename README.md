@@ -1,4 +1,4 @@
-PhoneGap Android Plugins
+COrdova Android Plugins
 ========================
 <br/><br/>
 
