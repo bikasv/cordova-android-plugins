@@ -1,4 +1,4 @@
-COrdova Android Plugins
+Cordova Android Plugins
 ========================
 <br/><br/>
 
