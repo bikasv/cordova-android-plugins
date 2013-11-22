@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:rim="http://www.blackberry.com/ns/widgets"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.bikasv.plugins.datepicker"
+    version="0.1.1">
+    <name>DatePickerPlugin</name>
+    <description>Cordova DatePicker Plugin</description>
+    <license>MIT</license>
+    <keywords>cordova,datepicker,android,phonegap</keywords>
+    <repo>https://github.com/bikasv/cordova-android-plugins.git</repo>
+    <issue>https://github.com/bikasv/cordova-android-plugins/issues</issue>
+
+    <engines>
+        <engine name="cordova" version=">=3.1.0" />
+    </engines>
+
+    <js-module src="scripts/datePickerPlugin.js" name="datePicker">
+        <clobbers target="datePicker" />
+    </js-module>
+
+    <js-module src="scripts/share.js" name="share">
+        <clobbers target="share" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="DatePickerPlugin">
+                <param name="android-package" value="com.bikasv.plugins.datepicker.DatePickerPlugin"/>
+            </feature>
+        </config-file>
+ 
+        <source-file src="datepicker/DatePickerPlugin.java" target-dir="src/com/bikasv/plugins/datepicker" />
+    </platform>
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Share">
+                <param name="android-package" value="com.bikasv.plugins.share.Share"/>
+            </feature>
+        </config-file>
+ 
+        <source-file src="share/Share.java" target-dir="src/com/bikasv/plugins/share" />
+    </platform>
+
+</plugin>

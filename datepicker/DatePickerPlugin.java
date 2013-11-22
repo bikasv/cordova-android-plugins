@@ -26,21 +26,23 @@ import android.view.KeyEvent;
 import android.widget.DatePicker;
 import android.widget.DatePicker.OnDateChangedListener;
 import android.widget.TimePicker;
-import org.apache.cordova.api.Plugin;
-import org.apache.cordova.api.PluginResult;
+
+import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.PluginResult;
+import org.apache.cordova.CallbackContext;
 
 import android.os.Build;
 
 @SuppressWarnings("deprecation")
 @SuppressLint("NewApi")
-public class DatePickerPlugin extends Plugin {
+public class DatePickerPlugin extends CordovaPlugin {
 
 	private static final String ACTION_DATE = "date";
 	private static final String ACTION_TIME = "time";
 	private final String pluginName = "DatePickerPlugin";
 
 	@Override
-	public PluginResult execute(final String action, final JSONArray data, final String callBackId) {
+	public boolean execute(final String action, final JSONArray data, CallbackContext callBackId) {
 		Log.d(pluginName, "DatePicker called with options: " + data);
 		PluginResult result = null;
 
@@ -48,7 +50,8 @@ public class DatePickerPlugin extends Plugin {
 		result = new PluginResult(PluginResult.Status.NO_RESULT);
 		result.setKeepCallback(true);
 
-		return result;
+		callbackContext.sendPluginResult(result);
+		return true;
 	}
 
 	public synchronized void show(final JSONArray data, final String callBackId) {

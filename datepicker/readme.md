@@ -1,17 +1,18 @@
-1. Copy the datePickerPlugin.js file to your 'www' folder (or similar folder of choosing)
-2. Create a package com.bikasv.plugins.datepicker
-3. Copy the DatePickerPlugin.java file into this package
-4. Update your res/xml/config.xml file with the following line:
+Install Instructions:
+----
 
-   `<plugin name="DatePickerPlugin" value="com.bikasv.plugins.datepicker.DatePickerPlugin"/>`
+   `cordova plugin add https://github.com/bikasv/cordova-android-plugins.git`
 
-5. In order or avoid keyboard popping up when calendar is shown, you may want to set the attribute of `<input>` to readonly.
-6. You can set following options in datePicker -
+Usage Instructions:
+----
+
+1. In order or avoid keyboard popping up when calendar is shown, you may want to set the attribute of `<input>` to readonly.
+2. You can set following options in datePicker -
     * action - Can be `date` or `time`
     * date - Can be the custome date set by user or current date
     * minDate - Date before which datepicker will be unselectable
     * maxDate - Date after which datepicker will be unselectable
-7. Add following (or similar) jQuery code to handle click events for date picker -
+3. Add following (or similar) jQuery code to handle click events for date picker -
 
 ```
     function handleDates(elm, options) {
@@ -40,7 +41,7 @@
         });
     }
 ```
-8. Add following (or similar) jQuery code to handle click events for time picker -
+4. Add following (or similar) jQuery code to handle click events for time picker -
 
 ```
     function handleTime(elm) {

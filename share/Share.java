@@ -11,14 +11,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Intent;
-import org.apache.cordova.api.Plugin;
-import org.apache.cordova.api.PluginResult;
+import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.PluginResult;
+import org.apache.cordova.CallbackContext;
 
 @SuppressWarnings("deprecation")
-public class Share extends Plugin {
+public class Share extends CordovaPlugin {
 
 	@Override
-	public PluginResult execute(String action, JSONArray args, String callbackId) {
+	public PluginResult execute(String action, JSONArray args, CallbackContext callbackId) {
 		try {
 			JSONObject jo = args.getJSONObject(0);
 			String type = jo.getString("type");
@@ -36,9 +37,11 @@ public class Share extends Plugin {
 				doEmailIntent(subject, email, cc, bcc, text, chooser);
 			}
 			
-			return new PluginResult(PluginResult.Status.OK);
+			callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
+			return true;
 		} catch (JSONException e) {
-			return new PluginResult(PluginResult.Status.JSON_EXCEPTION);
+			callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.JSON_EXCEPTION));
+			return true;
 		}
 	}
 	
