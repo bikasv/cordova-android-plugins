@@ -19,7 +19,7 @@ import org.apache.cordova.CallbackContext;
 public class Share extends CordovaPlugin {
 
 	@Override
-	public PluginResult execute(String action, JSONArray args, CallbackContext callbackId) {
+	public boolean execute(String action, JSONArray args, CallbackContext callbackId) {
 		try {
 			JSONObject jo = args.getJSONObject(0);
 			String type = jo.getString("type");
