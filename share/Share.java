@@ -15,7 +15,6 @@ import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
 import org.apache.cordova.CallbackContext;
 
-@SuppressWarnings("deprecation")
 public class Share extends CordovaPlugin {
 
 	@Override
@@ -37,10 +36,10 @@ public class Share extends CordovaPlugin {
 				doEmailIntent(subject, email, cc, bcc, text, chooser);
 			}
 			
-			callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
+			callbackId.sendPluginResult(new PluginResult(PluginResult.Status.OK));
 			return true;
 		} catch (JSONException e) {
-			callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.JSON_EXCEPTION));
+			callbackId.sendPluginResult(new PluginResult(PluginResult.Status.JSON_EXCEPTION));
 			return true;
 		}
 	}
