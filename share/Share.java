@@ -44,7 +44,7 @@ public class Share extends CordovaPlugin {
 		}
 	}
 	
-	private void doSendIntent(String subject, String text, boolean chooser) {
+	private boolean doSendIntent(String subject, String text, boolean chooser) {
 		Intent sendIntent = new Intent(Intent.ACTION_SEND);
 		sendIntent.setType("text/plain");
 		sendIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
@@ -56,9 +56,11 @@ public class Share extends CordovaPlugin {
 		else {
 			this.cordova.startActivityForResult(this, sendIntent, 0);
 		}
+		
+		return true;
 	}
 	
-	private void doEmailIntent(String subject, String email, String cc, String bcc, String text, boolean chooser) {
+	private boolean doEmailIntent(String subject, String email, String cc, String bcc, String text, boolean chooser) {
 		Intent sendIntent = new Intent(Intent.ACTION_SEND);
 		sendIntent.setType("message/rfc822");
 		sendIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
@@ -79,6 +81,8 @@ public class Share extends CordovaPlugin {
 		else {
 			this.cordova.startActivityForResult(this, sendIntent, 0);
 		}
+		
+		return true;
 	}
 
 }

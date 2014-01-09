@@ -6,6 +6,12 @@
  */
 
 var Share = function() {};
+
+Share.prototype.available = function (callback) {
+	cordova.exec(function (avail) {
+		callback(avail ? true : false);
+	}, null, "Share", "available", []);
+};
             
 Share.prototype.show = function(content, success, fail) {
     var defaults = {
@@ -30,9 +36,13 @@ Share.prototype.show = function(content, success, fail) {
     }, 'Share', '', new Array(defaults));
 };
 
-if(!window.plugins) {
-    window.plugins = {};
-}
-if (!window.plugins.share) {
-    window.plugins.share = new Share();
-}
+Share.install = function () {
+	if (!window.plugins) {
+		window.plugins = {};
+	}
+
+	window.plugins.share = new Share();
+	return window.plugins.share;
+};
+
+cordova.addConstructor(Share.install);

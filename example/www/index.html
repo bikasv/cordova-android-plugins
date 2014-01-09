@@ -6,33 +6,25 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="HandheldFriendly" content="true">
 
-        <link rel="stylesheet" href="styles/jquery.mobile.min.css" />
-        <link rel="stylesheet" href="styles/jquery.mobile.structure.min.css" />
-
-        <script src="scripts/jquery-1.8.2.min.js"></script>
-        <script src="scripts/jquery.mobile.min.js"></script>
-        <script src="scripts/cordova.js"></script>
-        <script src="scripts/datePickerPlugin.js"></script>
-        <script src="scripts/share.js"></script>
-        <script src="scripts/app.js"></script>
+        <link rel="stylesheet" href="styles/jquery.mobile-1.4.0.min.css" />
     </head>
     <body>
         <div id="Home" data-role="page">
-            <div data-role="header" data-position="fixed">
+            <div data-role="header" data-position="fixed" data-theme="b">
                 <h3>PhoneGap Plugins</h3>
             </div>
-            <div data-role="content">
-                <a data-role="button" href="#Datep" data-theme="a" data-transition="slide">DatePicker Demo</a>
-                <a data-role="button" href="#Share" data-theme="a" data-transition="slide">Share Demo</a>
+            <div role="main">
+                <a data-role="button" href="#Datep" data-transition="slide">DatePicker Demo</a>
+                <a data-role="button" href="#Share" data-transition="slide">Share Demo</a>
             </div>
         </div>
 
         <div id="Datep" data-role="page">
-            <div data-role="header" data-position="fixed">
+            <div data-role="header" data-position="fixed" data-theme="b">
                 <h3>DatePicker Demo</h3>
                 <a data-role="button" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse" href="#Home">Home</a>
             </div>
-            <div data-role="content">
+            <div role="main">
                 <div data-role="fieldcontain">
                     <label for="free"/>No Min or Max</label>
                     <input id="free" name="free" onclick="getCalendar(this)" readonly="true" placeholder="dd/mm/yyyy" />
@@ -51,20 +43,32 @@
                 </div>
                 <div data-role="fieldcontain">
                     <label for="time" />Time Input</label>
-                    <input id="time" name="time" onclick="handleTime(this)" readonly="true" placeholder="HH:mm" />
+                    <input id="time" name="time" onclick="app.handleTime(this)" readonly="true" placeholder="HH:mm" />
                 </div>
             </div>
         </div>
 
         <div id="Share" data-role="page">
-            <div data-role="header" data-position="fixed">
+            <div data-role="header" data-position="fixed" data-theme="b">
                 <h3>Sharing Demo</h3>
                 <a data-role="button" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse" href="#Home">Home</a>
             </div>
-            <div data-role="content">
-                <a data-role="button" data-theme="a" onclick="shareLink('http://bikasv.com')">Share predefined URL</a>
-                <a data-role="button" data-theme="a" onclick="sendEmail()">Send predefined email</a>
+            <div role="main">
+                <a data-role="button" onclick="shareLink('http://bikasv.com')">Share predefined URL</a>
+                <a data-role="button" onclick="sendEmail()">Send predefined email</a>
+				
+				<input id="shareUrl" placeholder="Input text/URL" />
+                <a data-role="button" onclick="shareVal()">Share</a>
             </div>
         </div>
+
+        <script src="scripts/jquery-2.0.3.min.js"></script>
+        <script src="scripts/jquery.mobile-1.4.0.min.js"></script>
+        <script src="cordova.js"></script>
+        <script src="scripts/datePickerPlugin.js"></script>
+        <script src="scripts/share.js"></script>
+        <script src="scripts/app.datePicker.js"></script>
+        <script src="scripts/app.share.js"></script>
+        <script src="scripts/app.js"></script>
     </body>
 </html>

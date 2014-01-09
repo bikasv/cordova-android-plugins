@@ -10,6 +10,11 @@ Following are the list of plugins available.
 	<li>Sharing Plugin</li>
 </ul>
 
+Install Instructions:
+----
+
+   `cordova plugin add https://github.com/bikasv/cordova-android-plugins.git`
+
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 The MIT License

@@ -39,3 +39,4 @@ Usage Instructions:
         );
     }
 ```
+5. Optionally see app.share.js for tentative implementation.
