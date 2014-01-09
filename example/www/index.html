@@ -13,7 +13,7 @@
             <div data-role="header" data-position="fixed" data-theme="b">
                 <h3>PhoneGap Plugins</h3>
             </div>
-            <div role="main">
+            <div role="main" style="padding: 0 10px;">
                 <a data-role="button" href="#Datep" data-transition="slide">DatePicker Demo</a>
                 <a data-role="button" href="#Share" data-transition="slide">Share Demo</a>
             </div>
@@ -24,22 +24,22 @@
                 <h3>DatePicker Demo</h3>
                 <a data-role="button" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse" href="#Home">Home</a>
             </div>
-            <div role="main">
+            <div role="main" style="padding: 0 10px;">
                 <div data-role="fieldcontain">
                     <label for="free"/>No Min or Max</label>
-                    <input id="free" name="free" onclick="getCalendar(this)" readonly="true" placeholder="dd/mm/yyyy" />
+                    <input id="free" name="free" onclick="getCalendar(this)" readonly="true" placeholder="mm/dd/yyyy" />
                 </div>
                 <div data-role="fieldcontain">
                     <label for="onlymin" />Min Date Set</label>
-                    <input id="onlymin" name="onlymin" onclick="getCalendar(this, 'min')" readonly="true" placeholder="dd/mm/yyyy" />
+                    <input id="onlymin" name="onlymin" onclick="getCalendar(this, 'min')" readonly="true" placeholder="mm/dd/yyyy" />
                 </div>
                 <div data-role="fieldcontain">
                     <label for="onlymax" />Max Date Set</label>
-                    <input id="onlymax" name="onlymax" onclick="getCalendar(this, 'max')" readonly="true" placeholder="dd/mm/yyyy" />
+                    <input id="onlymax" name="onlymax" onclick="getCalendar(this, 'max')" readonly="true" placeholder="mm/dd/yyyy" />
                 </div>
                 <div data-role="fieldcontain">
                     <label for="both" />Both Min and Max set</label>
-                    <input id="both" name="both" onclick="getCalendar(this, 'both')" readonly="true" placeholder="dd/mm/yyyy" />
+                    <input id="both" name="both" onclick="getCalendar(this, 'both')" readonly="true" placeholder="mm/dd/yyyy" />
                 </div>
                 <div data-role="fieldcontain">
                     <label for="time" />Time Input</label>
@@ -53,7 +53,7 @@
                 <h3>Sharing Demo</h3>
                 <a data-role="button" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse" href="#Home">Home</a>
             </div>
-            <div role="main">
+            <div role="main" style="padding: 0 10px;">
                 <a data-role="button" onclick="shareLink('http://bikasv.com')">Share predefined URL</a>
                 <a data-role="button" onclick="sendEmail()">Send predefined email</a>
 				
