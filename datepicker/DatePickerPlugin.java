@@ -13,6 +13,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.R;
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.DatePickerDialog.OnDateSetListener;
@@ -61,12 +62,15 @@ public class DatePickerPlugin extends CordovaPlugin {
         final Runnable runnable;
 
         String action = "date";
+        String clearText = "";
         long minDateLong = 0, maxDateLong = 0;
 
         int month = -1, day = -1, year = -1, hour = -1, min = -1;
         try {
             JSONObject obj = data.getJSONObject(0);
             action = obj.getString("mode");
+            
+            clearText = obj.getString("clearText");
 
             String optionDate = obj.getString("date");
 
@@ -90,6 +94,8 @@ public class DatePickerPlugin extends CordovaPlugin {
         final int mDay = day == -1 ? c.get(Calendar.DAY_OF_MONTH) : day;
         final int mHour = hour == -1 ? c.get(Calendar.HOUR_OF_DAY) : hour;
         final int mMinutes = min == -1 ? c.get(Calendar.MINUTE) : min;
+        
+        final String clearButtonText = clearText;
 
         final long minDate = minDateLong;
         final long maxDate = maxDateLong;
@@ -104,6 +110,21 @@ public class DatePickerPlugin extends CordovaPlugin {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
                         timeDialog.setCancelable(true);
                         timeDialog.setCanceledOnTouchOutside(false);
+                        if (!clearButtonText.isEmpty()){
+	                        timeDialog.setButton(TimePickerDialog.BUTTON_NEUTRAL, clearButtonText, new DialogInterface.OnClickListener() {
+	                        	@Override
+	                            public void onClick(DialogInterface dialog, int which) {
+	                                // TODO Auto-generated method stub
+	                                callbackContext.success("-1");                                
+	                            }
+	                        });
+                        }
+                        timeDialog.setButton(DialogInterface.BUTTON_NEGATIVE, currentCtx.getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                callbackContext.success("");
+                            }
+                        });
                         timeDialog.setOnKeyListener(new Dialog.OnKeyListener() {
                             @Override
                             public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
@@ -243,7 +264,7 @@ public class DatePickerPlugin extends CordovaPlugin {
             date.setHours(hourOfDay);
             date.setMinutes(minute);
 
-            callbackContext.success(date.toLocaleString());
+            callbackContext.success(date.toGMTString());
         }
     }
 
