@@ -21,6 +21,7 @@ var DatePicker = (function (gap) {
 		var defaults = {
 			mode : '',
 			date : '',
+			clearText: '',
 			minDate: 0,
 			maxDate: 0
 		};
