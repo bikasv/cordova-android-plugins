@@ -13,7 +13,7 @@ Following are the list of plugins available.
 Install Instructions:
 ----
 
-   `cordova plugin add https://github.com/bikasv/cordova-android-plugins.git`
+   `cordova plugin add https://github.com/native5/cordova-android-plugins.git`
 
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 

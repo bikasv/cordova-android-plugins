@@ -1,10 +1,10 @@
 /**
- * @author Bikas Vaibhav (http://bikasv.com) 2013
+ * @author Bikas Vaibhav (http://native5.com) 2013
  * Rewrote the plug-in at https://github.com/phonegap/phonegap-plugins/tree/master/Android/Share
  * It can now accept min and max dates for DatePicker.
  */
 
-package com.bikasv.plugins.share;
+package com.native5.plugins.share;
 
 import org.json.JSONArray;
 import org.json.JSONException;

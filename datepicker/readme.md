@@ -1,7 +1,7 @@
 Install Instructions:
 ----
 
-   `cordova plugin add https://github.com/bikasv/cordova-android-plugins.git`
+   `cordova plugin add https://github.com/native5/cordova-android-plugins.git`
 
 Usage Instructions:
 ----
