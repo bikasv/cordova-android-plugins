@@ -107,7 +107,7 @@ public class DatePickerPlugin extends CordovaPlugin {
                 public void run() {
                     final TimeSetListener timeSetListener = new TimeSetListener(datePickerPlugin, callbackContext);
                     final TimePickerDialog timeDialog = new TimePickerDialog(currentCtx, timeSetListener, mHour,
-                            mMinutes, true);
+                            mMinutes, DateFormat.is24HourFormat(currentCtx));
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
                         timeDialog.setCancelable(true);
                         timeDialog.setCanceledOnTouchOutside(false);
