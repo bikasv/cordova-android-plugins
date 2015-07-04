@@ -1,74 +1,57 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
     <head>
-        <title>Cordova Plugins Demo</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="HandheldFriendly" content="true">
+        <title>BeerWatcher</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible"/>
+        <meta name="description" content="goes here..."/>
+        <meta name="keywords" content="keyword 1, keyword 2"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+        <meta name="robots"/>
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="theme-color" content="#4e3f5c">
 
-        <link rel="stylesheet" href="styles/jquery.mobile-1.4.0.min.css" />
+        <link rel="apple-touch-icon-precomposed" href="">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="">
+        <link rel="shortcut icon" sizes="196x196" href="">
+
+        <!-- Following is used by Wiredep (Gulp) to insert Bower JS files -->
+        <!-- bower:css -->
+        <link rel="stylesheet" href="lib/angular-material/angular-material.css">
+        <!-- endinject -->
+
+        <link rel="stylesheet" href="styles/main.css">
+
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
     </head>
-    <body>
-        <div id="Home" data-role="page">
-            <div data-role="header" data-position="fixed" data-theme="b">
-                <h3>Cordova Plugins Demo</h3>
-            </div>
-            <div role="main" style="padding: 0 10px;">
-                <a data-role="button" href="#Datep" data-transition="slide">DatePicker Demo</a>
-                <a data-role="button" href="#Share" data-transition="slide">Share Demo</a>
+
+    <body layout="column" ng-app="app" ng-controller="AppCtrl">
+        <md-toolbar layout="row">
+            <h1 class="md-toolbar-tools" layout-align-gt-sm="center">BeerWatcher</h1>
+        </md-toolbar>
+        <div layout="row" flex>
+            <div layout="column" flex id="content">
+                <md-content layout="column" flex class="md-padding">
+                    <input id="both" name="both" ng-click="getCalendar($event, 'both')" readonly="true" placeholder="Select Date" />
+                    <input id="time" name="time" onclick="app.handleTime(this)" readonly="true" placeholder="Select Time" />
+                </md-content>
             </div>
         </div>
-
-        <div id="Datep" data-role="page">
-            <div data-role="header" data-position="fixed" data-theme="b">
-                <h3>DatePicker Demo</h3>
-                <a data-role="button" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse" href="#Home">Home</a>
-            </div>
-            <div role="main" style="padding: 0 10px;">
-                <div data-role="fieldcontain">
-                    <label for="free"/>No Min or Max</label>
-                    <input id="free" name="free" onclick="getCalendar(this)" readonly="true" placeholder="mm/dd/yyyy" />
-                </div>
-                <div data-role="fieldcontain">
-                    <label for="onlymin" />Min Date Set</label>
-                    <input id="onlymin" name="onlymin" onclick="getCalendar(this, 'min')" readonly="true" placeholder="mm/dd/yyyy" />
-                </div>
-                <div data-role="fieldcontain">
-                    <label for="onlymax" />Max Date Set</label>
-                    <input id="onlymax" name="onlymax" onclick="getCalendar(this, 'max')" readonly="true" placeholder="mm/dd/yyyy" />
-                </div>
-                <div data-role="fieldcontain">
-                    <label for="both" />Both Min and Max set</label>
-                    <input id="both" name="both" onclick="getCalendar(this, 'both')" readonly="true" placeholder="mm/dd/yyyy" />
-                </div>
-                <div data-role="fieldcontain">
-                    <label for="time" />Time Input</label>
-                    <input id="time" name="time" onclick="app.handleTime(this)" readonly="true" placeholder="HH:mm" />
-                </div>
-            </div>
-        </div>
-
-        <div id="Share" data-role="page">
-            <div data-role="header" data-position="fixed" data-theme="b">
-                <h3>Sharing Demo</h3>
-                <a data-role="button" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse" href="#Home">Home</a>
-            </div>
-            <div role="main" style="padding: 0 10px;">
-                <a data-role="button" onclick="shareLink('http://bikasv.com')">Share predefined URL</a>
-                <a data-role="button" onclick="sendEmail()">Send predefined email</a>
-				
-				<input id="shareUrl" placeholder="Input text/URL" />
-                <a data-role="button" onclick="shareVal()">Share</a>
-            </div>
-        </div>
-
-        <script src="scripts/jquery-2.0.3.min.js"></script>
-        <script src="scripts/jquery.mobile-1.4.0.min.js"></script>
+        
+        <!-- Following is used by Wiredep (Gulp) to insert Bower CSS files -->
+        <!-- bower:js -->
         <script src="cordova.js"></script>
-        <script src="scripts/datePickerPlugin.js"></script>
-        <script src="scripts/share.js"></script>
-        <script src="scripts/app.datePicker.js"></script>
-        <script src="scripts/app.share.js"></script>
-        <script src="scripts/app.js"></script>
+        <script src="lib/jquery/jquery-1.11.3.min.js"></script>
+        <script src="lib/angular/angular.js"></script>
+
+        <script src="lib/angular-animate/angular-animate.js"></script>
+        <script src="lib/angular-aria/angular-aria.js"></script>
+        <script src="lib/angular-material/angular-material.js"></script>
+        <!-- endinject -->
+
+        <script type="text/javascript" src="scripts/app.datePicker.js"></script>
+        <script type="text/javascript" src="scripts/app.module.js"></script>
+        <script type="text/javascript" src="scripts/app.controller.js"></script>
     </body>
 </html>

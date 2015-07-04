@@ -2,7 +2,7 @@ Cordova Android Plugins
 ========================
 <br/><br/>
 
-This code is completely dependent on the PhoneGap project, also hosted on [GitHub](github.com/phonegap/phonegap) and extends the [PhoneGap Plugins for Android](https://github.com/phonegap/phonegap-plugins/tree/master/Android).
+This code is completely dependent on the Cordova project, also hosted on [Apache Cordova](https://cordova.apache.org/).
 <br/>
 Following are the list of plugins available.
 <ul>
@@ -13,13 +13,13 @@ Following are the list of plugins available.
 Install Instructions:
 ----
 
-   `cordova plugin add https://github.com/native5/cordova-android-plugins.git`
+   `cordova plugin add https://github.com/bikasv/cordova-android-plugins.git`
 
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 The MIT License
 
-Copyright (c) 2013 Bikas Vaibhav
+Copyright (c) 2015 Bikas Vaibhav
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

@@ -1,0 +1,13 @@
+.no-bg {
+    background: none;
+}
+
+.no-border {
+    border: none;
+    -webkit-tap-highlight-color: transparent
+}
+
+input {
+    padding: 8px;
+    margin-bottom: 10px;
+}
